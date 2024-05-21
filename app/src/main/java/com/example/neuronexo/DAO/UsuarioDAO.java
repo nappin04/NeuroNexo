@@ -91,8 +91,8 @@ public class UsuarioDAO {
             try {
                 String query = "INSERT INTO usuario ( sexo, edad) VALUES (?,?)";
                 PreparedStatement statement = connection.prepareStatement(query);
-                statement.setBoolean(1, usuario.isSexo());
-                statement.setInt(2, usuario.getEdad());
+                statement.setString(1, usuario.getSexo());
+                statement.setString(2, usuario.getEdad());
 
 
                 // Las filas afectadas son las que me dirán si algún dato se ha guardado en la base de datos
@@ -128,13 +128,13 @@ public class UsuarioDAO {
 
 
 
-    public boolean guardarPuntos(int puntos, String username){
+    public boolean guardarPuntos(String nombre, int puntos){
         if(conectarConBBDD()){
             try{
-                String query = "INSERT INTO puntuacion (puntuacion, usuario_username) VALUES (?,?)";
+                String query = "INSERT INTO nivel (nombre, puntos) VALUES (?,?)";
                 PreparedStatement statement = connection.prepareStatement(query);
-                statement.setInt(1, puntos);
-                statement.setString(2, username);
+                statement.setString(1, nombre);
+                statement.setInt(2, puntos);
 
                 int filasAfectadas = statement.executeUpdate();
                 if(filasAfectadas > 0){
@@ -161,48 +161,7 @@ public class UsuarioDAO {
 
     }
 
-    public ArrayList<UsuarioPuntuacion> obtenerPuntos() {
-        ArrayList<UsuarioPuntuacion> listaRanking = new ArrayList<>();
 
-        if (conectarConBBDD()) {
-            try {
-                String query = "SELECT usuarios.usuario, p.puntuacion FROM usuarios " +
-                        "JOIN puntuacion p ON usuarios.usuario = p.usuario_username ORDER BY p.puntuacion DESC";
-                PreparedStatement statement = connection.prepareStatement(query);
-                ResultSet resultSet = statement.executeQuery();
-
-                // Creo una lista temporal para almacenar los resultados antes de procesarlos
-                ArrayList<UsuarioPuntuacion> listaTemporal = new ArrayList<>();
-
-                // Mientras que el ResultSet contenga datos, agrego los usuarios y sus puntos a la lista temporal
-                while (resultSet.next()) {
-                    String username = resultSet.getString("usuario");
-                    int puntos = resultSet.getInt("puntuacion");
-                    UsuarioPuntuacion usuarioPuntuacion = new UsuarioPuntuacion(username, puntos);
-                    listaTemporal.add(usuarioPuntuacion);
-                }
-
-                // Utilizo dicha lista temporal y actualizo los puntos en la base de datos si es necesario
-                for (UsuarioPuntuacion usuarioPuntuacion : listaTemporal) {
-                    // Si el usuario ya está en la listaRanking, actualizo sus puntos en la base de datos
-                    if (listaRanking.contains(usuarioPuntuacion)) {
-                        actualizarPuntos(usuarioPuntuacion.getPuntuacion(), usuarioPuntuacion.getUsuario());
-                    } else {
-                        // Si el usuario no está en la listaRanking, lo agrego
-                        listaRanking.add(usuarioPuntuacion);
-                    }
-                }
-            } catch (SQLException e) {
-                System.out.println("Hubo un error con la consulta: " + e.getMessage());
-            } finally {
-                conexionBBDD.cerrarConexion(connection);
-            }
-        } else {
-            System.out.println("No se pudo conectar con la base de datos");
-        }
-
-        return listaRanking;
-    }
 
 
 

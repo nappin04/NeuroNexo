@@ -5,39 +5,33 @@ public class UsuarioModel {
     private int id;
 
 
-    private boolean sexo;
-    private int edad;
+    private String sexo,edad;
 
-    public UsuarioModel(boolean sexo, int edad) {
+
+    public UsuarioModel(String sexo, String edad) {
 
         this.sexo = sexo;
         this.edad = edad;
     }
 
+    public UsuarioModel() {
+    }
 
-
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
+    public String getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(String edad) {
         this.edad = edad;
     }
-
-    public UsuarioModel(){
-
-    }
-
-
-
 
     public int getId() {
         return id;
