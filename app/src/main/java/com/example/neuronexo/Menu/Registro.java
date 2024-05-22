@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -100,6 +101,8 @@ public class Registro extends AppCompatActivity {
                         boolean respuesta = usuarioDAO.registrarUsuario(usuarioModel);
                         if (respuesta){
                             mensajeToast.mostrarToastcorto(Registro.this, "¡BIENVENID@! 🥳🥳");
+                            Intent intent = new Intent(Registro.this, Menuu.class);
+                            startActivity(intent);
                         }else {
                             mensajeToast.mostrarToastcorto(Registro.this, "No se pudo registrar 😕");
                         }
