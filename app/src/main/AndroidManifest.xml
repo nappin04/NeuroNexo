@@ -15,6 +15,42 @@
         android:theme="@style/Theme.NeuroNexo"
         tools:targetApi="31">
         <activity
+            android:name=".Subniveles.Adivinanzas3"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Adivinanzas2"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Adivinanzas1"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Calculo3"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Calculo2"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Calculo1"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Memoria3"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Memoria2"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Memoria1"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Colores3"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Colores2"
+            android:exported="false" />
+        <activity
+            android:name=".Subniveles.Colores1"
+            android:exported="false" />
+        <activity
             android:name=".Niveles.Nivel3"
             android:exported="false" />
         <activity
