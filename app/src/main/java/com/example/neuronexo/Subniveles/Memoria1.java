@@ -90,6 +90,7 @@ public class Memoria1 extends AppCompatActivity {
         // Si todos los botones son invisibles, mostrar un mensaje al usuario
         if (allInvisible) {
             toastMensajes.mostrarToastcorto(Memoria1.this, "¡LO HAS LOGRADO!");
+            finish();
         }
 
         firstButtonIndex = -1;
