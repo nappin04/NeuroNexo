@@ -18,7 +18,7 @@ import com.example.neuronexo.R;
 
 public class Calculo1 extends AppCompatActivity {
     private EditText operacion1, operacion2, operacion3, operacion4, operacion5;
-    private Button terminar;
+    private Button terminar, atras;
     private TextView crono;
     private ToastMensajes mensaje = new ToastMensajes();
 
@@ -33,6 +33,7 @@ public class Calculo1 extends AppCompatActivity {
         operacion5 = findViewById(R.id.et_valorOp5);
         terminar = findViewById(R.id.bt_terminar);
         crono = findViewById(R.id.tv_crono2);
+        atras = findViewById(R.id.bt_atrasCalculo1);
 
         CountDownTimer countDownTimer = new CountDownTimer(60000, 1000) {
             @Override
@@ -84,5 +85,9 @@ public class Calculo1 extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void Salir(View v){
+        finish();
     }
 }

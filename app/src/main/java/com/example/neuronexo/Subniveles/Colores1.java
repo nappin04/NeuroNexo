@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class Colores1 extends AppCompatActivity {
     private EditText et1, et2, et3, et4;
     private TextView crono;
     private ToastMensajes toastMensajes = new ToastMensajes();
+    private Button salir;
 
 
 
@@ -33,6 +35,7 @@ public class Colores1 extends AppCompatActivity {
         et3 = findViewById(R.id.et3);
         et4 = findViewById(R.id.et4);
         crono = findViewById(R.id.tv_crono);
+        salir = findViewById(R.id.bt_salirColores1);
         CountDownTimer countDownTimer = new CountDownTimer(60000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
@@ -84,6 +87,10 @@ public class Colores1 extends AppCompatActivity {
         }
 
     public void volver() {
+        finish();
+    }
+
+    public void Salir(View v){
         finish();
     }
 }

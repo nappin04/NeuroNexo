@@ -24,7 +24,7 @@ public class Nivel1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivel1);
 
-        listView = findViewById(R.id.ListaOpciones);
+        listView = findViewById(R.id.ListaOpciones2);
 
         // Opciones para el lista
         String[] opciones = new String[]{"Colores", "Cálculo", "Memoria", "Adivinanzas"};

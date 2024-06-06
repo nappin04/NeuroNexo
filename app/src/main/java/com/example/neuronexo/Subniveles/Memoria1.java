@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.neuronexo.Models.ToastMensajes;
@@ -22,6 +23,7 @@ public class Memoria1 extends AppCompatActivity {
     private int firstButtonIndex = -1;
     private int secondButtonIndex = -1;
     private boolean isClickable = true;
+    private Button salir;
     private Handler handler = new Handler();
     private ToastMensajes toastMensajes = new ToastMensajes();
 
@@ -38,6 +40,7 @@ public class Memoria1 extends AppCompatActivity {
         buttons[5] = findViewById(R.id.ib6);
         buttons[6] = findViewById(R.id.ib7);
         buttons[7] = findViewById(R.id.ib8);
+        salir = findViewById(R.id.bt_salirMemoria1);
 
         List<Integer> colorList = Arrays.asList(colors);
         Collections.shuffle(colorList);
@@ -103,6 +106,10 @@ public class Memoria1 extends AppCompatActivity {
             button.setBackgroundColor(Color.GRAY);
             button.setVisibility(View.VISIBLE);
         }
+    }
+
+    public void Salir(View v){
+        finish();
     }
 
 

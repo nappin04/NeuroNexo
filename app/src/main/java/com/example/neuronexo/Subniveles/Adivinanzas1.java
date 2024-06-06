@@ -29,7 +29,7 @@ import java.util.HashMap;
 
 public class Adivinanzas1 extends AppCompatActivity {
 
-    private Button adivinanzas;
+    private Button adivinanzas, salir;
     private ToastMensajes mensaje = new ToastMensajes();
     private int respuestaCorrecta = 0;
 
@@ -38,6 +38,7 @@ public class Adivinanzas1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adivinanzas1);
         adivinanzas = findViewById(R.id.bt_adivinanzas);
+        salir = findViewById(R.id.bt_salir);
 
         crearAdivinanzas();
         adivinanzas.setOnClickListener(new View.OnClickListener() {
@@ -83,10 +84,10 @@ public class Adivinanzas1 extends AppCompatActivity {
         preguntasAdivinanzas.put("Tengo agujas y no sé coser", new PreguntasRespuestas("Tengo agujas y no sé coser", adi3respuesta, 0)); // La respuesta correcta está en el índice 0
         preguntasAdivinanzas.put("Vuelo de noche, duermo en el día y nunca verás plumas en ala mía", new PreguntasRespuestas("Vuelo de noche, duermo en el día y nunca verás plumas en ala mía", adi4respuesta, 1)); // La respuesta correcta está en el índice 1
 
-        // Selecciono aleatoriamente 3 preguntas de las disponibles
+        // Selecciono aleatoriamente 4 preguntas de las disponibles
         elegirAdivinanzas = new ArrayList<>(preguntasAdivinanzas.keySet());
         Collections.shuffle(elegirAdivinanzas);
-        elegirAdivinanzas = new ArrayList<>(elegirAdivinanzas.subList(0, 3));
+        elegirAdivinanzas = new ArrayList<>(elegirAdivinanzas.subList(0, 4));
     }
 
     private int contadorAdivinanzas = 0;
@@ -179,6 +180,10 @@ public class Adivinanzas1 extends AppCompatActivity {
         contadorAdivinanzas = 0;
         respuestaUsuario.clear();
         crearAdivinanzas(); // Reorganiza las preguntas
-        mostrarAdivinanzas(); // Empieza de nuevo
+
+    }
+
+    public void Salir(View v){
+        finish();
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".Niveles.Nivel1">
 
     <ListView
-        android:id="@+id/ListaOpciones"
+        android:id="@+id/ListaOpciones2"
         android:layout_width="0dp"
         android:layout_height="328dp"
         android:layout_marginStart="42dp"

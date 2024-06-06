@@ -6,4 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".Subniveles.Calculo2">
 
+    <EditText
+        android:id="@+id/et_valorOp1N2"
+        android:layout_width="90dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="50dp"
+        android:background="#EEFFA726"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/cian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_valorOp2N2"
+        android:layout_width="90dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:background="#EEFFA726"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/cian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_valorOp1N2" />
+
+    <EditText
+        android:id="@+id/et_valorOp3N2"
+        android:layout_width="90dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:background="#EEFFA726"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/cian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_valorOp2N2" />
+
+    <EditText
+        android:id="@+id/et_valorOp4N2"
+        android:layout_width="90dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:background="#EEFFA726"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/cian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_valorOp3N2" />
+
+    <EditText
+        android:id="@+id/et_valorOp5N2"
+        android:layout_width="90dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:background="#EEFFA726"
+        android:ems="10"
+        android:hint="Valor"
+        android:inputType="numberSigned"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="@color/cian"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_valorOp4N2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_terminarN2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/black"
+        android:onClick="ejercicio"
+        android:text="Terminar"
+        android:textColor="@color/white"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_valorOp5N2" />
+
+    <TextView
+        android:id="@+id/tv_cronoN2Calculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="176dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_atrasCalculo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="45dp"
+        android:onClick="Salir"
+        android:text="Atras"
+        app:layout_constraintEnd_toStartOf="@+id/tv_cronoN2Calculo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
